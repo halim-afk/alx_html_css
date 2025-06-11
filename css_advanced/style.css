@@ -384,7 +384,8 @@ rating img {
 }
 
 .footer-row div img { /* Social media icons */
-   /* Makes icons white if they are black */
+  width: 30px;
+  height: 30px;
 }
 
 .footer p {
@@ -453,6 +454,71 @@ rating img {
   .quote blockquote {
       font-size: 1em;
   }
+}
+/* Section Title specific styling for "Popular" */
+.videos h2 .coloring {
+  color: #8A2BE2; /* Primary purple color for "Popular" */
+}
+
+/* Container for the image and play button */
+.video-thumbnail-wrapper {
+  position: relative; /* Essential for positioning the play button */
+  width: 100%;
+  height: 160px; /* Match the desired height of your video thumbnails */
+  overflow: hidden; /* Ensures anything overflowing is clipped */
+  border-radius: 4px; /* Matches the card's general aesthetic */
+  margin-bottom: 15px; /* Space below the thumbnail area */
+}
+
+/* The actual video thumbnail image */
+.video-item .video-logo {
+  width: 100%;
+  height: 100%; /* Make image fill its wrapper */
+  object-fit: cover; /* Ensures the image covers the area without distortion */
+  display: block; /* Removes extra space below the image */
+  border-radius: 4px; /* Apply border-radius directly to the image as well */
+}
+
+/* The Play Button itself */
+.play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Center the button precisely */
+  width: 60px; /* Size of the play button circle */
+  height: 60px;
+  border-radius: 50%; /* Make it circular */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 2; /* Ensure it's above the image */
+}
+
+/* Image inside the play button */
+.play-button img {
+  width: 100px; /* Size of the play icon image */
+  height: 60px;
+  /* If your play.png is already white or a specific color you want, remove the filter. */
+}
+
+
+
+/* Keep the rest of your .video-item, .video-list, .author-rating, etc. CSS as it is */
+
+/* Adjustments for the author and rating section */
+
+.video-item .author h4 {
+  color: #8A2BE2; /* Set author name to purple */
+  font-weight: 600;
+}
+
+
+.video-item .rating p {
+  font-size: 0.9em;
+  color: #8A2BE2; /* Set rating text to purple */
+  font-weight: 600;
+  margin-left: 5px; /* Adjust spacing */
 }
 .coloring {
   color: #6a0dad;
