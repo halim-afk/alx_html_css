@@ -1,0 +1,462 @@
+/* Universal Styles & Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Lato', sans-serif; /* Consider linking Lato from Google Fonts in HTML */
+  line-height: 1.6;
+  color: #333; /* Default text color */
+}
+
+a {
+  text-decoration: none;
+  color: inherit; /* Inherit color by default, will be overridden */
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block; /* Removes extra space below images */
+}
+
+/* Colors used in the design (approximations) */
+:root {
+  --primary-purple: #8A2BE2; /* A strong purple, similar to the button/quote section */
+  --light-purple: #9333ea; /* A slightly lighter purple for backgrounds */
+  --dark-blue:#071629; /* Dark blue/purple for footer and membership section */
+  --text-white: #ffffff;
+  --text-light-gray: #ccc;
+  --text-dark-gray: #555;
+  --star-yellow: #f8c000; /* Approximate star color */
+}
+
+/* Shared Background for Header and Banner (Hero Section) */
+.shared-background {
+  background-image: linear-gradient(to bottom, rgba(40, 11, 61, 0.7), rgba(40, 11, 61, 0.7)), url('Object.png'); /* Replace with your actual hero image and adjust color overlay if needed */
+  background-size: cover;
+  background-position: center;
+  color: var(--text-white); /* Text on this background should be white */
+  padding-bottom: 80px; /* Space above the purple quote section */
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 5%; /* Adjust padding as needed */
+  max-width: 1200px; /* Max width to center content */
+  margin: 0 auto; /* Center the header */
+}
+
+header img {
+  height: 40px; /* Adjust logo size */
+}
+
+header nav a {
+  color: var(--text-white);
+  margin-left: 30px;
+  font-weight: 600;
+  font-size: 1.1em;
+  transition: color 0.3s ease;
+}
+
+header nav a:hover {
+  color: var(--primary-purple);
+}
+
+/* Banner Section (Hero) */
+.banner {
+  text-align: center;
+  padding: 100px 5% 0; /* Top padding for content, less bottom padding as pros section fills it */
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.banner-head h1 {
+  font-size: 4em; /* Adjust as per design */
+  margin-bottom: 20px;
+  font-weight: 900;
+  text-transform: capitalize;
+}
+
+.banner-head p {
+  font-size: 1.5em;
+  margin-bottom: 40px;
+  font-weight: 300;
+}
+
+.banner-head button,
+.membership button {
+  background-color: var(--primary-purple);
+  color: var(--text-white);
+  border: none;
+  padding: 15px 30px;
+  border-radius: 25px;
+  font-size: 1.1em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.banner-head button:hover,
+.membership button:hover {
+  background-color: #6a0dad; /* Darker shade on hover */
+}
+
+/* Pros Section (Teachers) */
+.pros {
+  margin-top: 80px; /* Space from the button above */
+}
+
+.pros h2 {
+  font-size: 2.2em;
+  font-weight: 300;
+  margin-bottom: 50px;
+}
+
+.pros-teachers {
+  display: flex;
+  justify-content: center;
+  gap: 40px; /* Space between teacher cards */
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.pros-teachers > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 150px; /* Fixed width for each teacher card */
+}
+
+.pros-teachers img {
+  width: 150px; /* Make images circular */
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover; /* Ensures image covers the circle */
+  margin-bottom: 15px;
+}
+
+.pros-teachers h3 {
+  font-size: 1.2em;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.pros-teachers p {
+  font-size: 0.9em;
+  color: var(--text-light-gray);
+}
+
+/* Quote Section */
+.quote {
+  background-color: var(--light-purple);
+  color: var(--text-white);
+  padding: 80px 5%;
+}
+
+.quote > div {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.quote img {
+  width: 180px; /* Larger circular image for the quote author */
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0; /* Prevent image from shrinking */
+}
+
+.quote blockquote {
+  font-size: 1.2em;
+  font-style: italic;
+  margin-bottom: 15px;
+  flex-grow: 1; /* Allow blockquote to take available space */
+}
+
+.quote p:first-of-type {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.quote p:last-of-type {
+  font-size: 0.9em;
+  opacity: 0.8;
+}
+
+/* Videos Section */
+.videos {
+  padding: 60px 40px;
+  background-color: #e9ecef;
+}
+
+.videos h2 {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.video-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.video-item {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 5px;
+  flex: 1 1 250px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.video-item img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.author-rating {
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  
+}
+
+.author {
+  display: flex;
+  align-items: center;
+  
+  gap: 10px;
+}
+
+.author img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 8px; /* space between author and rating */
+}
+rating img {
+  width: 10px;
+  height: 10px;
+}
+
+
+
+/* Membership Section */
+.membership {
+  background-color: var(--dark-blue);
+  color: var(--text-white);
+  padding: 80px 5%;
+  text-align: center;
+}
+
+.membership h2 {
+  font-size: 2.5em;
+  margin-bottom: 60px;
+  font-weight: 700;
+}
+
+.membership-content {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-bottom: 50px; /* Space above the button */
+  max-width: 1200px;
+  margin: 0 auto 50px auto;
+}
+
+.membership-plan {
+  width: 250px; /* Fixed width for membership plans */
+  text-align: center;
+}
+
+.membership-plan img {
+  width: 100px; /* Smile icon size */
+  height: 100px;
+  object-fit: contain;
+  margin: 0 auto 20px auto;
+}
+
+.membership-plan h4 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  color: var(--primary-purple);
+}
+
+.membership-plan p {
+  font-size: 1em;
+  color: var(--text-light-gray);
+}
+
+/* FAQ Section */
+.faq {
+  background-color: var(--text-white);
+  padding: 80px 5%;
+  text-align: center;
+}
+
+.faq h2 {
+  font-size: 2.5em;
+  margin-bottom: 60px;
+  color: #333;
+  font-weight: 700;
+}
+
+.faq-content {
+  display: flex;
+  justify-content: center;
+  gap: 50px; /* Space between the two columns */
+  flex-wrap: wrap; /* Allow columns to stack on smaller screens */
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.faq-row {
+  flex: 1; /* Each row takes equal space */
+  min-width: 300px; /* Minimum width before wrapping */
+}
+
+.faq-item {
+  text-align: left;
+  margin-bottom: 40px; /* Space between FAQ items */
+}
+
+.faq-item h4 {
+  font-size: 1.4em;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.faq-item p {
+  font-size: 1em;
+  color: var(--text-dark-gray);
+}
+
+/* Footer */
+.footer {
+  background-color: var(--dark-blue);
+  color: var(--text-white);
+  padding: 40px 5%;
+  text-align: center;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.footer-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%; /* Take full width of the content area */
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  gap: 20px; /* Space between logo and social icons */
+}
+
+.footer-row img:first-child { /* Logo */
+  height: 40px;
+}
+
+.footer-row div { /* Social media icons container */
+  display: flex;
+  gap: 15px; /* Space between social icons */
+}
+
+.footer-row div img { /* Social media icons */
+   /* Makes icons white if they are black */
+}
+
+.footer p {
+  font-size: 0.9em;
+  color: var(--text-light-gray);
+  margin-top: 20px; /* Space above copyright text */
+}
+
+/* Basic responsiveness for smaller screens (add more as needed) */
+@media (max-width: 768px) {
+  header {
+      flex-direction: column;
+      gap: 15px;
+  }
+
+  header nav a {
+      margin: 0 15px;
+  }
+
+  .banner-head h1 {
+      font-size: 3em;
+  }
+
+  .banner-head p {
+      font-size: 1.2em;
+  }
+
+  .pros-teachers,
+  .videos-content,
+  .membership-content,
+  .faq-content {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .pros-teachers > div,
+  .videos-rows,
+  .membership-plan {
+      width: 90%; /* Make cards take more width on small screens */
+      max-width: 350px; /* Prevent them from getting too wide */
+  }
+
+  .quote > div {
+      flex-direction: column;
+      text-align: center;
+  }
+
+  .quote img {
+      margin-bottom: 20px;
+  }
+
+  .footer-row {
+      flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .banner-head h1 {
+      font-size: 2.5em;
+  }
+
+  .banner-head p {
+      font-size: 1em;
+  }
+
+  .quote blockquote {
+      font-size: 1em;
+  }
+}
+.coloring {
+  color: #6a0dad;
+}
+#space{
+  word-spacing: 40px;
+}
